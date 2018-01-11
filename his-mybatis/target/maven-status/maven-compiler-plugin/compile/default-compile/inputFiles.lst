@@ -1,0 +1,11 @@
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\config\DruidDataSourceConfiguration.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\config\DynamicDataSource.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\interceptor\DataAccessInterceptor.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\plugin\DynamicPlugin.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\strategy\Strategy.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\strategy\RoundRobinStrategy.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\base\BaseMapper.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\enums\DynamicDataSourceGlobal.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\config\DynamicDataSourceHolder.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\strategy\AbstractStrategy.java
+G:\base\his\his-mybatis\src\main\java\com\his\mybatis\manager\DynamicDataSourceTransactionManager.java

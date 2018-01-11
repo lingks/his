@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.his</groupId>
+	<artifactId>his</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.4.RELEASE</version>
+	</parent>
+	<properties>
+		<springfox.swagger2.version>2.6.1</springfox.swagger2.version>
+
+
+		<springboot.pagehelper.version>1.1.0</springboot.pagehelper.version>
+
+		<fastjson.version>1.2.28</fastjson.version>
+	</properties>
+	<modules>
+		<module>his-config-center</module>
+		<module>his-eureka</module>
+		<module>his-consul</module>
+		<module>his-consul-client</module>
+		<module>his-common</module>
+		<module>his-mybatis</module>
+		<module>his-manager</module>
+        <module>his-tk-mybatis</module>
+    </modules>
+</project>

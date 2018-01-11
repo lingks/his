@@ -1,0 +1,37 @@
+info:
+    name: spring cloud config center
+    contact: lingks
+        #git:
+        #uri: https://github.com/linyuxi98983/config-repo.git
+        #search-paths: config
+server:
+  port: 30003
+spring:
+  #profiles:
+    #active: native
+  cloud:
+    config:
+      uri: http://192.168.0.108:30003
+      server:
+        #native:
+        git:
+          uri: https://github.com/lingks/his-pj
+          search-paths: his-config-center/config
+      label: master
+  application:
+    name: his-config-center
+  rabbitmq:
+    host: 192.168.0.11
+    port: 5672
+    username: admin
+    password: admin
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.0.108:30002/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+management:
+  security:
+    enabled: false

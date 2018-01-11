@@ -1,0 +1,116 @@
+commonConfig:
+            appName: his-web-aggregator
+
+# tomcat 配置
+#server.address:
+server:
+      port: 7777
+      displayName:  ${spring.application.name}
+# 日志配置
+logging:
+        file: ${commonConfig.appName}.log
+        path: ./
+        pattern:
+                console: "-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint}  [%F:%L]  %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"
+
+                file: "${WHO}  %d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{60}   [%F:%L]: %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+        level:
+            root: info
+zuul:
+  routes:
+    uaa:
+      path: /uaa/**
+      sensitiveHeaders:
+      serviceId: his-authorization
+    his-omp:
+      path: /his-omp/**
+      sensitiveHeaders:
+      serviceId: his-omp
+    hflow:
+      path: /hflow/**
+      sensitiveHeaders:
+      serviceId: hflow
+    order:
+      path: /order/**
+      sensitiveHeaders:
+      serviceId: order-service
+    search:
+      path: /search/**
+      sensitiveHeaders:
+      serviceId: his-search
+    aggregator:
+      path: /aggregator/**
+      sensitiveHeaders:
+      serviceId: his-web-aggregator
+    foundation:
+      path: /foundation/**
+      sensitiveHeaders:
+      serviceId: his-foundation
+    box:
+      path: /box/**
+      sensitiveHeaders:
+      serviceId: his-box
+
+  add-proxy-headers: true
+
+# JACKSON (JacksonProperties) json序列化和反序列化使用的日期格式
+spring:
+    jackson:
+          date-format:  yyyy-MM-dd'T'HH:mm
+          joda-date-time-format:  yyyy-MM-dd'T'HH:mm
+          time-zone:  GMT+8
+          serialization:
+                      WRITE_DATES_AS_TIMESTAMPS:  false
+    application:
+      name: ${commonConfig.appName}
+
+feign:
+  httpclient:
+    enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:1111}/eureka/
+
+
+
+# 异步线程池配置
+async:
+    core-pool-size: 2
+    max-pool-size: 50
+    queue-capacity: 10000
+    namePrefix: spring-boot-practice
+
+
+
+# Configuration properties for OAuth2 Resources.
+oauth2:
+    server-host: http://localhost:9191/api
+
+security:
+    oauth2:
+      resource:
+          id: res_apptem
+          clientId: $2a$10$XOVs4Z1YtPKqKwQVywG9j.xLAqXYRQLGZMGMrZDNbtl6pUC0Weteq
+          clientSecret: $2a$10$XOVs4Z1YtPKqKwQVywG9j.xLAqXYRQLGZMGMrZDNbtl6pUC0Weteq
+          tokenInfoUri:  ${oauth2.server-host}/oauth/check_token/
+          userInfoUri: ${oauth2.server-host}/user
+
+
+#ribbon config
+exampleService:
+  ribbon:
+    listOfServers: http://localhost:9191
+
+rebbon:
+  httpclient:
+    enabled: true
+
+practice:
+  oauth2:
+    client:
+      id: ${security.oauth2.resource.id}
+      accessTokenUrl: ${oauth2.server-host}/oauth/token
+      clientId: ${security.oauth2.resource.clientId}
+      clientSecret: ${security.oauth2.resource.clientSecret}
+      clientAuthenticationScheme: header

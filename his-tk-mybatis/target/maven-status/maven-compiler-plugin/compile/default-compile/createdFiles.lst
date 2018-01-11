@@ -1,0 +1,6 @@
+com\his\ts\mybatis\mapper\UserDao.class
+com\his\ts\mybatis\BootstrapApplication.class
+com\his\ts\mybatis\bean\UserInfo.class
+com\his\ts\mybatis\dao\impl\TestInterFaceImpl.class
+com\his\ts\mybatis\rest\UserController.class
+com\his\ts\mybatis\dao\TestInterFace.class

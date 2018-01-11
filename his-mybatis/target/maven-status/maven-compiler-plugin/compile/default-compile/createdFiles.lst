@@ -1,0 +1,12 @@
+com\his\mybatis\config\DruidDataSourceConfiguration.class
+com\his\mybatis\interceptor\DataAccessInterceptor.class
+com\his\mybatis\strategy\RoundRobinStrategy.class
+com\his\mybatis\manager\DynamicDataSourceTransactionManager.class
+com\his\mybatis\base\BaseMapper.class
+com\his\mybatis\enums\DynamicDataSourceGlobal.class
+com\his\mybatis\strategy\Strategy.class
+com\his\mybatis\config\DynamicDataSourceHolder.class
+com\his\mybatis\config\MybatisMapperConfig.class
+com\his\mybatis\config\DynamicDataSource.class
+com\his\mybatis\strategy\AbstractStrategy.class
+com\his\mybatis\plugin\DynamicPlugin.class
