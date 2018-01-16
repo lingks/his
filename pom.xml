@@ -29,5 +29,6 @@
 		<module>his-mybatis</module>
 		<module>his-manager</module>
         <module>his-tk-mybatis</module>
-    </modules>
+		<module>his-rabbitmq</module>
+	</modules>
 </project>
